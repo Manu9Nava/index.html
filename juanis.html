@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pirámides Aztecas - Legado Ancestral</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:wght@400;700;900&display=swap');
+        
+        @keyframes pyramid-rise {
+            0% { transform: translateY(100px) scale(0.8); opacity: 0; }
+            100% { transform: translateY(0) scale(1); opacity: 1; }
+        }
+        
+        @keyframes float-gentle {
+            0%, 100% { transform: translateY(0px) rotateZ(0deg); }
+            50% { transform: translateY(-12px) rotateZ(1deg); }
+        }
+        
+        @keyframes glow-pulse {
+            0%, 100% { box-shadow: 0 0 40px rgba(255, 215, 0, 0.5), inset 0 0 20px rgba(255, 215, 0, 0.2); }
+            50% { box-shadow: 0 0 80px rgba(255, 215, 0, 0.8), inset 0 0 40px rgba(255, 215, 0, 0.4); }
+        }
+        
+        @keyframes slide-diagonal {
+            from { transform: translate(-150px, 150px); opacity: 0; }
+            to { transform: translate(0, 0); opacity: 1; }
+        }
+        
+        @keyframes rotate-orbit {
+            from { transform: rotate(0deg) translateX(80px) rotate(0deg); }
+            to { transform: rotate(360deg) translateX(80px) rotate(-360deg); }
+        }
+        
+        @keyframes text-glow {
+            0%, 100% { text-shadow: 0 0 20px rgba(255, 215, 0, 0.8); }
+            50% { text-shadow: 0 0 40px rgba(255, 215, 0, 1), 0 0 60px rgba(255, 140, 0, 0.8); }
+        }
+        
+        @keyframes wave-motion {
+            0%, 100% { transform: translateX(0) scaleY(1); }
+            25% { transform: translateX(5px) scaleY(1.1); }
+            75% { transform: translateX(-5px) scaleY(0.9); }
+        }
+        
+        @keyframes sparkle {
+            0%, 100% { opacity: 0; transform: scale(0); }
+            50% { opacity: 1; transform: scale(1); }
+        }
+        
+        .pyramid-rise { animation: pyramid-rise 2s ease-out; }
+        .float-gentle { animation: float-gentle 7s ease-in-out infinite; }
+        .glow-pulse { animation: glow-pulse 5s ease-in-out infinite; }
+        .slide-diagonal { animation: slide-diagonal 1.8s ease-out; }
+        .rotate-orbit { animation: rotate-orbit 30s linear infinite; }
+        .text-glow { animation: text-glow 4s ease-in-out infinite; }
+        .wave-motion { animation: wave-motion 6s ease-in-out infinite; }
+        .sparkle { animation: sparkle 2s ease-in-out infinite; }
+        
+        .ancient-pattern {
+            background-image: 
+                repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,215,0,0.1) 10px, rgba(255,215,0,0.1) 20px),
+                repeating-linear-gradient(-45deg, transparent, transparent 15px, rgba(139,69,19,0.1) 15px, rgba(139,69,19,0.1) 30px);
+        }
+        
+        .pyramid-3d {
+            filter: drop-shadow(0 20px 40px rgba(0,0,0,0.5)) drop-shadow(0 0 20px rgba(255,215,0,0.3));
+        }
+        
+        .golden-gradient {
+            background: linear-gradient(135deg, #FFD700, #FFA500, #FF8C00, #DAA520);
+            background-size: 300% 300%;
+            animation: gradient-flow 8s ease infinite;
+        }
+        
+        @keyframes gradient-flow {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-purple-900 via-indigo-900 to-blue-900 min-h-screen overflow-x-hidden relative">
+    <!-- Patrón de fondo ancestral -->
+    <div class="fixed inset-0 ancient-pattern opacity-30"></div>
+    
+    <!-- Estrellas parpadeantes -->
+    <div class="fixed top-20 left-20 w-2 h-2 bg-yellow-300 rounded-full sparkle"></div>
+    <div class="fixed top-40 right-32 w-1 h-1 bg-white rounded-full sparkle" style="animation-delay: 1s;"></div>
+    <div class="fixed top-60 left-1/3 w-1.5 h-1.5 bg-yellow-200 rounded-full sparkle" style="animation-delay: 2s;"></div>
+    <div class="fixed bottom-40 right-20 w-2 h-2 bg-orange-300 rounded-full sparkle" style="animation-delay: 3s;"></div>
+    
+    <!-- Luna azteca orbitando -->
+    <div class="fixed top-16 left-1/2 transform -translate-x-1/2">
+        <div class="rotate-orbit">
+            <svg width="40" height="40" viewBox="0 0 40 40">
+                <circle cx="20" cy="20" r="15" fill="#E6E6FA" opacity="0.9"/>
+                <circle cx="20" cy="20" r="10" fill="#D8BFD8" opacity="0.7"/>
+                <circle cx="16" cy="16" r="2" fill="#C0C0C0" opacity="0.8"/>
+                <circle cx="24" cy="18" r="1.5" fill="#C0C0C0" opacity="0.6"/>
+            </svg>
+        </div>
+    </div>
+
+    <!-- Header con título principal -->
+    <header class="relative z-10 text-center py-20">
+        <h1 class="text-8xl md:text-9xl font-bold text-transparent bg-clip-text golden-gradient font-serif text-glow slide-diagonal">
+            TEMPLOS
+        </h1>
+        <h2 class="text-5xl md:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-orange-400 to-red-400 font-serif slide-diagonal" style="animation-delay: 0.8s;">
+            SAGRADOS
+        </h2>
+        <p class="text-2xl md:text-3xl text-amber-200 mt-8 font-light slide-diagonal" style="animation-delay: 1.2s;">
+            Escalones hacia los Dioses Aztecas
+<p class="text-2xl md:text-3xl text-amber-200 mt-8 font-light slide-diagonal" style="animation-delay: 1.2s;">
+            Arte y arquitectura Azteca
+<p class="text-2xl md:text-3xl text-amber-200 mt-8 font-light slide-diagonal" style="animation-delay: 1.2s;">
+            Juana Gabriela Rubio Martinez
+        </p>
+    </header>
+
+    <!-- Sección principal con pirámides -->
+    <main class="relative z-10 max-w-7xl mx-auto px-6">
+        
+        <!-- Pirámide Central Monumental -->
+        <div class="flex justify-center mb-24">
+            <div class="relative pyramid-rise float-gentle glow-pulse">
+                <svg width="500" height="400" viewBox="0 0 500 400" class="pyramid-3d">
+                    <!-- Sombra base -->
+                    <ellipse cx="250" cy="380" rx="200" ry="20" fill="rgba(0,0,0,0.3)"/>
+                    
+                    <!-- Base monumental -->
+                    <polygon points="50,350 450,350 400,280 100,280" fill="#8B4513" stroke="#654321" stroke-width="4"/>
+                    <!-- Segundo nivel -->
+                    <polygon points="100,280 400,280 360,220 140,220" fill="#A0522D" stroke="#654321" stroke-width="4"/>
+                    <!-- Tercer nivel -->
+                    <polygon points="140,220 360,220 320,170 180,170" fill="#CD853F" stroke="#654321" stroke-width="4"/>
+                    <!-- Cuarto nivel -->
+                    <polygon points="180,170 320,170 285,130 215,130" fill="#DAA520" stroke="#654321" stroke-width="4"/>
+                    <!-- Quinto nivel -->
+                    <polygon points="215,130 285,130 260,100 240,100" fill="#FFD700" stroke="#654321" stroke-width="4"/>
+                    
+                    <!-- Escalinata central majestuosa -->
+                    <rect x="240" y="280" width="20" height="20" fill="#654321"/>
+                    <rect x="240" y="220" width="20" height="20" fill="#654321"/>
+                    <rect x="240" y="170" width="20" height="20" fill="#654321"/>
+                    <rect x="240" y="130" width="20" height="20" fill="#654321"/>
+                    <rect x="240" y="100" width="20" height="15" fill="#654321"/>
+                    
+                    <!-- Templo principal en la cima -->
+                    <rect x="225" y="70" width="50" height="35" fill="#B8860B" stroke="#654321" stroke-width="3"/>
+                    <polygon points="220,70 280,70 250,45" fill="#DAA520" stroke="#654321" stroke-width="2"/>
+                    
+                    <!-- Columnas del templo -->
+                    <rect x="235" y="70" width="4" height="35" fill="#654321"/>
+                    <rect x="245" y="70" width="4" height="35" fill="#654321"/>
+                    <rect x="255" y="70" width="4" height="35" fill="#654321"/>
+                    <rect x="265" y="70" width="4" height="35" fill="#654321"/>
+                    
+                    <!-- Decoraciones doradas -->
+                    <circle cx="150" cy="250" r="12" fill="#FFD700" opacity="0.9"/>
+                    <circle cx="350" cy="250" r="12" fill="#FFD700" opacity="0.9"/>
+                    <circle cx="200" cy="195" r="10" fill="#FFA500" opacity="0.8"/>
+                    <circle cx="300" cy="195" r="10" fill="#FFA500" opacity="0.8"/>
+                    <circle cx="250" cy="150" r="8" fill="#FFFF00" opacity="0.9"/>
+                    
+                    <!-- Símbolos aztecas en los laterales -->
+                    <text x="120" y="260" font-family="serif" font-size="20" fill="#FFD700">☀</text>
+                    <text x="370" y="260" font-family="serif" font-size="20" fill="#FFD700">🌙</text>
+                    <text x="170" y="200" font-family="serif" font-size="16" fill="#FFA500">⭐</text>
+                    <text x="320" y="200" font-family="serif" font-size="16" fill="#FFA500">⭐</text>
+                </svg>
+                
+                <!-- Rayos de luz desde la cima -->
+                <div class="absolute top-0 left-1/2 transform -translate-x-1/2">
+                    <div class="w-1 h-32 bg-gradient-to-b from-yellow-300 to-transparent opacity-80 wave-motion"></div>
+                    <div class="w-1 h-28 bg-gradient-to-b from-orange-300 to-transparent opacity-60 wave-motion absolute left-2" style="animation-delay: 1s;"></div>
+                    <div class="w-1 h-30 bg-gradient-to-b from-red-300 to-transparent opacity-60 wave-motion absolute -left-2" style="animation-delay: 2s;"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Constelación de pirámides menores -->
+        <div class="grid md:grid-cols-4 gap-8 mb-20">
+            <!-- Pirámide de Tláloc -->
+            <div class="text-center pyramid-rise" style="animation-delay: 1s;">
+                <div class="float-gentle glow-pulse" style="animation-delay: 1s;">
+                    <svg width="150" height="120" viewBox="0 0 150 120" class="pyramid-3d mx-auto">
+                        <polygon points="25,100 125,100 110,70 40,70" fill="#4682B4" stroke="#2F4F4F" stroke-width="2"/>
+                        <polygon points="40,70 110,70 95,45 55,45" fill="#5F9EA0" stroke="#2F4F4F" stroke-width="2"/>
+                        <polygon points="55,45 95,45 75,25" fill="#87CEEB" stroke="#2F4F4F" stroke-width="2"/>
+                        <rect x="70" y="20" width="10" height="10" fill="#4169E1"/>
+                        <!-- Símbolo de lluvia -->
+                        <text x="75" y="15" font-size="12" fill="#00BFFF">💧</text>
+                    </svg>
+                </div>
+                <h4 class="text-lg font-bold text-blue-300 mt-3">Templo de Tláloc</h4>
+                <p class="text-blue-200 text-sm">Dios de la lluvia</p>
+            </div>
+
+            <!-- Pirámide de Quetzalcóatl -->
+            <div class="text-center pyramid-rise" style="animation-delay: 1.5s;">
+                <div class="float-gentle glow-pulse" style="animation-delay: 3s;">
+                    <svg width="150" height="120" viewBox="0 0 150 120" class="pyramid-3d mx-auto">
+                        <polygon points="25,100 125,100 110,70 40,70" fill="#228B22" stroke="#006400" stroke-width="2"/>
+                        <polygon points="40,70 110,70 95,45 55,45" fill="#32CD32" stroke="#006400" stroke-width="2"/>
+                        <polygon points="55,45 95,45 75,25" fill="#7FFF00" stroke="#006400" stroke-width="2"/>
+                        <rect x="70" y="20" width="10" height="10" fill="#ADFF2F"/>
+                        <!-- Serpiente emplumada -->
+                        <path d="M 25 100 Q 40 85 55 100" stroke="#FFD700" stroke-width="3" fill="none"/>
+                        <circle cx="55" cy="95" r="2" fill="#FFD700"/>
+                    </svg>
+                </div>
+                <h4 class="text-lg font-bold text-green-300 mt-3">Quetzalcóatl</h4>
+                <p class="text-green-200 text-sm">Serpiente emplumada</p>
+            </div>
+
+            <!-- Pirámide de Huitzilopochtli -->
+            <div class="text-center pyramid-rise" style="animation-delay: 2s;">
+                <div class="float-gentle glow-pulse" style="animation-delay: 5s;">
+                    <svg width="150" height="120" viewBox="0 0 150 120" class="pyramid-3d mx-auto">
+                        <polygon points="25,100 125,100 110,70 40,70" fill="#DC143C" stroke="#8B0000" stroke-width="2"/>
+                        <polygon points="40,70 110,70 95,45 55,45" fill="#FF4500" stroke="#8B0000" stroke-width="2"/>
+                        <polygon points="55,45 95,45 75,25" fill="#FF6347" stroke="#8B0000" stroke-width="2"/>
+                        <rect x="70" y="20" width="10" height="10" fill="#FF0000"/>
+                        <!-- Colibrí -->
+                        <text x="75" y="15" font-size="12" fill="#FFD700">🐦</text>
+                    </svg>
+                </div>
+                <h4 class="text-lg font-bold text-red-300 mt-3">Huitzilopochtli</h4>
+                <p class="text-red-200 text-sm">Dios de la guerra</p>
+            </div>
+
+            <!-- Pirámide de Tezcatlipoca -->
+            <div class="text-center pyramid-rise" style="animation-delay: 2.5s;">
+                <div class="float-gentle glow-pulse" style="animation-delay: 7s;">
+                    <svg width="150" height="120" viewBox="0 0 150 120" class="pyramid-3d mx-auto">
+                        <polygon points="25,100 125,100 110,70 40,70" fill="#2F2F2F" stroke="#000000" stroke-width="2"/>
+                        <polygon points="40,70 110,70 95,45 55,45" fill="#4F4F4F" stroke="#000000" stroke-width="2"/>
+                        <polygon points="55,45 95,45 75,25" fill="#696969" stroke="#000000" stroke-width="2"/>
+                        <rect x="70" y="20" width="10" height="10" fill="#A9A9A9"/>
+                        <!-- Jaguar -->
+                        <text x="75" y="15" font-size="12" fill="#FFD700">🐆</text>
+                    </svg>
+                </div>
+                <h4 class="text-lg font-bold text-gray-300 mt-3">Tezcatlipoca</h4>
+                <p class="text-gray-200 text-sm">Espejo humeante</p>
+            </div>
+        </div>
+
+        <!-- Panel informativo con efectos -->
+        <div class="golden-gradient rounded-3xl p-1 mb-16 glow-pulse">
+            <div class="bg-black bg-opacity-60 rounded-3xl p-12 backdrop-blur-sm">
+                <h3 class="text-4xl font-bold text-center text-glow mb-10 slide-diagonal">Secretos de las Pirámides</h3>
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4 slide-diagonal" style="animation-delay: 1s;">
+                            <div class="w-4 h-4 bg-yellow-400 rounded-full mt-2 sparkle"></div>
+                            <div>
+                                <h5 class="text-xl font-bold text-yellow-300 mb-2">Orientación Cósmica</h5>
+                                <p class="text-amber-200">Cada pirámide está perfectamente alineada con constelaciones y eventos astronómicos sagrados</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4 slide-diagonal" style="animation-delay: 1.5s;">
+                            <div class="w-4 h-4 bg-orange-400 rounded-full mt-2 sparkle" style="animation-delay: 1s;"></div>
+                            <div>
+                                <h5 class="text-xl font-bold text-orange-300 mb-2">Acústica Sagrada</h5>
+                                <p class="text-amber-200">Diseñadas para amplificar cantos y ceremonias, creando ecos que imitaban voces divinas</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4 slide-diagonal" style="animation-delay: 2s;">
+                            <div class="w-4 h-4 bg-red-400 rounded-full mt-2 sparkle" style="animation-delay: 2s;"></div>
+                            <div>
+                                <h5 class="text-xl font-bold text-red-300 mb-2">Simbolismo Numérico</h5>
+                                <p class="text-amber-200">Cada escalón y nivel representa ciclos sagrados del calendario azteca</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4 slide-diagonal" style="animation-delay: 2.5s;">
+                            <div class="w-4 h-4 bg-purple-400 rounded-full mt-2 sparkle" style="animation-delay: 3s;"></div>
+                            <div>
+                                <h5 class="text-xl font-bold text-purple-300 mb-2">Ingeniería Avanzada</h5>
+                                <p class="text-amber-200">Construidas sin herramientas de metal, usando técnicas que desafían la comprensión moderna</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4 slide-diagonal" style="animation-delay: 3s;">
+                            <div class="w-4 h-4 bg-pink-400 rounded-full mt-2 sparkle" style="animation-delay: 4s;"></div>
+                            <div>
+                                <h5 class="text-xl font-bold text-pink-300 mb-2">Portales Dimensionales</h5>
+                                <p class="text-amber-200">Los aztecas creían que las cimas eran puertas entre el mundo terrenal y divino</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4 slide-diagonal" style="animation-delay: 3.5s;">
+                            <div class="w-4 h-4 bg-cyan-400 rounded-full mt-2 sparkle" style="animation-delay: 5s;"></div>
+                            <div>
+                                <h5 class="text-xl font-bold text-cyan-300 mb-2">Energía Telúrica</h5>
+                                <p class="text-amber-200">Ubicadas en puntos de poder energético natural de la Tierra</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Estadísticas impresionantes -->
+        <div class="bg-gradient-to-r from-indigo-800 to-purple-800 rounded-2xl p-10 mb-16 glow-pulse">
+            <h3 class="text-4xl font-bold text-center text-glow mb-12">Números Sagrados</h3>
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="text-center pyramid-rise" style="animation-delay: 1s;">
+                    <div class="text-5xl font-bold text-yellow-400 text-glow mb-2">75m</div>
+                    <p class="text-purple-200">Altura del Templo Mayor</p>
+                </div>
+                <div class="text-center pyramid-rise" style="animation-delay: 1.5s;">
+                    <div class="text-5xl font-bold text-orange-400 text-glow mb-2">52</div>
+                    <p class="text-purple-200">Años del ciclo sagrado</p>
+                </div>
+                <div class="text-center pyramid-rise" style="animation-delay: 2s;">
+                    <div class="text-5xl font-bold text-red-400 text-glow mb-2">260</div>
+                    <p class="text-purple-200">Días del calendario ritual</p>
+                </div>
+                <div class="text-center pyramid-rise" style="animation-delay: 2.5s;">
+                    <div class="text-5xl font-bold text-pink-400 text-glow mb-2">13</div>
+                    <p class="text-purple-200">Niveles celestiales</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer místico -->
+        <footer class="text-center py-16">
+            <div class="flex justify-center space-x-16 mb-10">
+                <div class="text-5xl float-gentle">🏛️</div>
+                <div class="text-5xl float-gentle" style="animation-delay: 2s;">⚡</div>
+                <div class="text-5xl float-gentle" style="animation-delay: 4s;">🌟</div>
+                <div class="text-5xl float-gentle" style="animation-delay: 6s;">🦅</div>
+                <div class="text-5xl float-gentle" style="animation-delay: 8s;">🐍</div>
+            </div>
+            <p class="text-3xl font-light text-glow text-amber-300 mb-4">
+                "Donde la piedra toca las estrellas"
+            </p>
+            <p class="text-xl text-purple-200 opacity-80">
+                Legado eterno de los constructores del cielo
+            </p>
+        </footer>
+    </main>
+
+    <!-- Elementos místicos flotantes -->
+    <div class="fixed top-24 left-12 text-4xl float-gentle opacity-50">🌙</div>
+    <div class="fixed top-80 right-20 text-4xl float-gentle opacity-50" style="animation-delay: 4s;">⭐</div>
+    <div class="fixed bottom-40 left-24 text-4xl float-gentle opacity-50" style="animation-delay: 8s;">☀️</div>
+    <div class="fixed bottom-80 right-12 text-4xl float-gentle opacity-50" style="animation-delay: 12s;">🌌</div>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96d3c766b01ffa30',t:'MTc1NDg3Mzg0Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
